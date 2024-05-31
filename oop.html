@@ -1,0 +1,53 @@
+<script>
+
+    // object
+    let kendaraan = {
+        brand: 'Honda Civic',
+        tipe: 'Sedan',
+        harga: 900,
+        hidupkanMesin: function() {
+            console.log('mobil nyala, siap jalan')
+        },
+        matikanMesin: function() {
+            console.log('mobil mati...')
+        },
+    }
+
+
+    // class
+    class Kendaraan {
+        constructor(brand, tipe, harga) {
+            this.brand = brand
+            this.tipe = tipe
+            this.harga = harga
+        }
+
+        hidupkanMesin() {
+            console.log(this.brand + ' nyala, siap jalan')
+        }
+
+        matikanMesin() {
+            console.log(this.brand + ' mati...')
+        }
+    }
+
+    // object besar
+    console.log(kendaraan.hidupkanMesin()) 
+
+    // class = rancangan untuk menciptakan sebuah object besar
+    // daripada membuat object berulang lebih dari 1x
+    // lebih baik buat class untuk menciptakan object tersebut
+
+    console.log(new Kendaraan('Toyota Alphard', 'minibus', 2000))
+    //jadi sebuah object/instance
+    
+    console.log(new Kendaraan('Toyota Avanza', 'minibus', 570).hidupkanMesin())
+    //menjalankan fungsi didalam object
+    
+    // console.log(Kendaraan.hidupkanMesin())
+    //gak bisa, karena belum mendefinisikan atribut/parameter yg dibutuhkan untuk menciptakan kendaraan
+
+    let lamborghini = new Kendaraan('Lamborghini Gallardo', 'supercar', 10000)
+    lamborghini.hidupkanMesin()
+
+</script>
